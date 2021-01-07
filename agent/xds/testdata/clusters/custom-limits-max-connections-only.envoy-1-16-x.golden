@@ -2,7 +2,7 @@
   "versionInfo": "00000001",
   "resources": [
     {
-      "@type": "type.googleapis.com/envoy.api.v2.Cluster",
+      "@type": "type.googleapis.com/envoy.config.cluster.v3.Cluster",
       "name": "db.default.dc1.internal.11111111-2222-3333-4444-555555555555.consul",
       "altStatName": "db.default.dc1.internal.11111111-2222-3333-4444-555555555555.consul",
       "type": "EDS",
@@ -10,7 +10,8 @@
         "edsConfig": {
           "ads": {
 
-          }
+          },
+          "resourceApiVersion": "V3"
         }
       },
       "connectTimeout": "5s",
@@ -32,7 +33,7 @@
       "transportSocket": {
         "name": "tls",
         "typedConfig": {
-          "@type": "type.googleapis.com/envoy.api.v2.auth.UpstreamTlsContext",
+          "@type": "type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext",
           "commonTlsContext": {
             "tlsParams": {
 
@@ -58,14 +59,15 @@
       }
     },
     {
-      "@type": "type.googleapis.com/envoy.api.v2.Cluster",
+      "@type": "type.googleapis.com/envoy.config.cluster.v3.Cluster",
       "name": "geo-cache.default.dc1.query.11111111-2222-3333-4444-555555555555.consul",
       "type": "EDS",
       "edsClusterConfig": {
         "edsConfig": {
           "ads": {
 
-          }
+          },
+          "resourceApiVersion": "V3"
         }
       },
       "connectTimeout": "5s",
@@ -82,7 +84,7 @@
       "transportSocket": {
         "name": "tls",
         "typedConfig": {
-          "@type": "type.googleapis.com/envoy.api.v2.auth.UpstreamTlsContext",
+          "@type": "type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext",
           "commonTlsContext": {
             "tlsParams": {
 
@@ -108,7 +110,7 @@
       }
     },
     {
-      "@type": "type.googleapis.com/envoy.api.v2.Cluster",
+      "@type": "type.googleapis.com/envoy.config.cluster.v3.Cluster",
       "name": "local_app",
       "type": "STATIC",
       "connectTimeout": "5s",
@@ -133,6 +135,6 @@
       }
     }
   ],
-  "typeUrl": "type.googleapis.com/envoy.api.v2.Cluster",
+  "typeUrl": "type.googleapis.com/envoy.config.cluster.v3.Cluster",
   "nonce": "00000001"
 }
