@@ -44,10 +44,10 @@ func (m *RegexMatcher) Validate() error {
 		return nil
 	}
 
-	if utf8.RuneCountInString(m.GetRegex()) < 1 {
+	if len(m.GetRegex()) < 1 {
 		return RegexMatcherValidationError{
 			field:  "Regex",
-			reason: "value length must be at least 1 runes",
+			reason: "value length must be at least 1 bytes",
 		}
 	}
 

@@ -44,10 +44,10 @@ func (m *MetadataMatcher) Validate() error {
 		return nil
 	}
 
-	if utf8.RuneCountInString(m.GetFilter()) < 1 {
+	if len(m.GetFilter()) < 1 {
 		return MetadataMatcherValidationError{
 			field:  "Filter",
-			reason: "value length must be at least 1 runes",
+			reason: "value length must be at least 1 bytes",
 		}
 	}
 
@@ -159,10 +159,10 @@ func (m *MetadataMatcher_PathSegment) Validate() error {
 
 	case *MetadataMatcher_PathSegment_Key:
 
-		if utf8.RuneCountInString(m.GetKey()) < 1 {
+		if len(m.GetKey()) < 1 {
 			return MetadataMatcher_PathSegmentValidationError{
 				field:  "Key",
-				reason: "value length must be at least 1 runes",
+				reason: "value length must be at least 1 bytes",
 			}
 		}
 

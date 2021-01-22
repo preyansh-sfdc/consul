@@ -224,8 +224,6 @@ func (m *HttpProtocolOptions) Validate() error {
 		}
 	}
 
-	// no validation rules for HeadersWithUnderscoresAction
-
 	return nil
 }
 

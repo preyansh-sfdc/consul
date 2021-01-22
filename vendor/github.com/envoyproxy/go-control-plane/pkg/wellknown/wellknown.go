@@ -18,33 +18,33 @@ package wellknown
 // HTTP filter names
 const (
 	// Buffer HTTP filter
-	Buffer = "envoy.filters.http.buffer"
+	Buffer = "envoy.buffer"
 	// CORS HTTP filter
-	CORS = "envoy.filters.http.cors"
+	CORS = "envoy.cors"
 	// Dynamo HTTP filter
-	Dynamo = "envoy.filters.http.dynamo"
+	Dynamo = "envoy.http_dynamo_filter"
 	// Fault HTTP filter
-	Fault = "envoy.filters.http.fault"
+	Fault = "envoy.fault"
 	// GRPCHTTP1Bridge HTTP filter
-	GRPCHTTP1Bridge = "envoy.filters.http.grpc_http1_bridge"
+	GRPCHTTP1Bridge = "envoy.grpc_http1_bridge"
 	// GRPCJSONTranscoder HTTP filter
-	GRPCJSONTranscoder = "envoy.filters.http.grpc_json_transcoder"
+	GRPCJSONTranscoder = "envoy.grpc_json_transcoder"
 	// GRPCWeb HTTP filter
-	GRPCWeb = "envoy.filters.http.grpc_web"
+	GRPCWeb = "envoy.grpc_web"
 	// Gzip HTTP filter
-	Gzip = "envoy.filters.http.gzip"
+	Gzip = "envoy.gzip"
 	// IPTagging HTTP filter
-	IPTagging = "envoy.filters.http.ip_tagging"
+	IPTagging = "envoy.ip_tagging"
 	// HTTPRateLimit filter
-	HTTPRateLimit = "envoy.filters.http.ratelimit"
+	HTTPRateLimit = "envoy.rate_limit"
 	// Router HTTP filter
-	Router = "envoy.filters.http.router"
+	Router = "envoy.router"
 	// Health checking HTTP filter
-	HealthCheck = "envoy.filters.http.health_check"
+	HealthCheck = "envoy.health_check"
 	// Lua HTTP filter
-	Lua = "envoy.filters.http.lua"
+	Lua = "envoy.lua"
 	// Squash HTTP filter
-	Squash = "envoy.filters.http.squash"
+	Squash = "envoy.squash"
 	// HTTPExternalAuthorization HTTP filter
 	HTTPExternalAuthorization = "envoy.filters.http.ext_authz"
 	// HTTPRoleBasedAccessControl HTTP filter
@@ -56,21 +56,21 @@ const (
 // Network filter names
 const (
 	// ClientSSLAuth network filter
-	ClientSSLAuth = "envoy.filters.network.client_ssl_auth"
+	ClientSSLAuth = "envoy.client_ssl_auth"
 	// Echo network filter
-	Echo = "envoy.filters.network.echo"
+	Echo = "envoy.echo"
 	// HTTPConnectionManager network filter
-	HTTPConnectionManager = "envoy.filters.network.http_connection_manager"
+	HTTPConnectionManager = "envoy.http_connection_manager"
 	// TCPProxy network filter
-	TCPProxy = "envoy.filters.network.tcp_proxy"
+	TCPProxy = "envoy.tcp_proxy"
 	// RateLimit network filter
-	RateLimit = "envoy.filters.network.ratelimit"
+	RateLimit = "envoy.ratelimit"
 	// MongoProxy network filter
-	MongoProxy = "envoy.filters.network.mongo_proxy"
+	MongoProxy = "envoy.mongo_proxy"
 	// ThriftProxy network filter
 	ThriftProxy = "envoy.filters.network.thrift_proxy"
 	// RedisProxy network filter
-	RedisProxy = "envoy.filters.network.redis_proxy"
+	RedisProxy = "envoy.redis_proxy"
 	// MySQLProxy network filter
 	MySQLProxy = "envoy.filters.network.mysql_proxy"
 	// ExternalAuthorization network filter
@@ -82,43 +82,41 @@ const (
 // Listener filter names
 const (
 	// OriginalDestination listener filter
-	OriginalDestination = "envoy.filters.listener.original_dst"
+	OriginalDestination = "envoy.listener.original_dst"
 	// ProxyProtocol listener filter
-	ProxyProtocol = "envoy.filters.listener.proxy_protocol"
+	ProxyProtocol = "envoy.listener.proxy_protocol"
 	// TlsInspector listener filter
-	TlsInspector = "envoy.filters.listener.tls_inspector"
+	TlsInspector = "envoy.listener.tls_inspector"
 	// HttpInspector listener filter
-	HttpInspector = "envoy.filters.listener.http_inspector"
+	HttpInspector = "envoy.listener.http_inspector"
 )
 
 // Tracing provider names
 const (
 	// Lightstep tracer name
-	Lightstep = "envoy.tracers.lightstep"
+	Lightstep = "envoy.lightstep"
 	// Zipkin tracer name
-	Zipkin = "envoy.tracers.zipkin"
+	Zipkin = "envoy.zipkin"
 	// DynamicOT tracer name
-	DynamicOT = "envoy.tracers.dynamic_ot"
-	// Datadog tracer name
-	Datadog = "envoy.tracers.datadog"
+	DynamicOT = "envoy.dynamic.ot"
 )
 
 // Stats sink names
 const (
 	// Statsd sink
-	Statsd = "envoy.stat_sinks.statsd"
+	Statsd = "envoy.statsd"
 	// DogStatsD compatible stastsd sink
-	DogStatsd = "envoy.stat_sinks.dog_statsd"
+	DogStatsd = "envoy.dog_statsd"
 	// MetricsService sink
-	MetricsService = "envoy.stat_sinks.metrics_service"
+	MetricsService = "envoy.metrics_service"
 )
 
 // Access log sink names
 const (
 	// FileAccessLog sink name
-	FileAccessLog = "envoy.access_loggers.file"
+	FileAccessLog = "envoy.file_access_log"
 	// HTTPGRPCAccessLog sink for the HTTP gRPC access log service
-	HTTPGRPCAccessLog = "envoy.access_loggers.http_grpc"
+	HTTPGRPCAccessLog = "envoy.http_grpc_access_log"
 )
 
 // Transport socket names
