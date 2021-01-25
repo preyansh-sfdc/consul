@@ -737,16 +737,19 @@ func TestServer_StreamAggregatedResources_IngressEmptyResponse(t *testing.T) {
 	emptyClusterJSON := `{
 		"versionInfo": "` + hexString(1) + `",
 		"typeUrl": "type.googleapis.com/envoy.api.v2.Cluster",
+		"resources": [],
 		"nonce": "` + hexString(1) + `"
 		}`
 	emptyListenerJSON := `{
 		"versionInfo": "` + hexString(1) + `",
 		"typeUrl": "type.googleapis.com/envoy.api.v2.Listener",
+		"resources": [],
 		"nonce": "` + hexString(2) + `"
 		}`
 	emptyRouteJSON := `{
 		"versionInfo": "` + hexString(1) + `",
 		"typeUrl": "type.googleapis.com/envoy.api.v2.RouteConfiguration",
+		"resources": [],
 		"nonce": "` + hexString(3) + `"
 		}`
 

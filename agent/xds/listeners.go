@@ -17,7 +17,6 @@ import (
 	envoyhttp "github.com/envoyproxy/go-control-plane/envoy/config/filter/network/http_connection_manager/v2"
 	envoytcp "github.com/envoyproxy/go-control-plane/envoy/config/filter/network/tcp_proxy/v2"
 	envoytype "github.com/envoyproxy/go-control-plane/envoy/type"
-	"github.com/envoyproxy/go-control-plane/pkg/wellknown"
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
@@ -1120,7 +1119,7 @@ func makeListenerFilter(opts listenerFilterOpts) (*envoylistener.Filter, error) 
 }
 
 func makeTLSInspectorListenerFilter() (*envoylistener.ListenerFilter, error) {
-	return &envoylistener.ListenerFilter{Name: wellknown.TlsInspector}, nil
+	return &envoylistener.ListenerFilter{Name: "envoy.filters.listener.tls_inspector"}, nil
 }
 
 func makeSNIFilterChainMatch(sniMatch string) *envoylistener.FilterChainMatch {
