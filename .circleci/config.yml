@@ -1067,7 +1067,7 @@ workflows:
       - envoy-integration-test-1_16_2-v2compat:
           requires:
             - dev-build
-      - envoy-integration-test-1.17.0:
+      - envoy-integration-test-1_17_0:
           requires:
             - dev-build
 
