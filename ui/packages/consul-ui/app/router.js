@@ -1,6 +1,7 @@
 import EmberRouter from '@ember/routing/router';
+import { runInDebug } from '@ember/debug';
 import { env } from 'consul-ui/env';
-import walk from 'consul-ui/utils/routing/walk';
+import walk, { dump } from 'consul-ui/utils/routing/walk';
 
 export const routes = {
   // Our parent datacenter resource sets the namespace
@@ -178,6 +179,19 @@ if (env('CONSUL_NSPACES_ENABLED')) {
     dc: routes.dc,
   };
 }
+runInDebug(() => {
+  window.routes = diagonal => {
+    const str = dump(routes);
+    if (diagonal) {
+      const win = window.open(
+        `https://alexspeller.com/ember-diagonal/?routesInput=${encodeURIComponent(str)}`,
+        '_blank'
+      );
+      win.focus();
+    }
+    return str;
+  };
+});
 export default class Router extends EmberRouter {
   location = env('locationType');
   rootURL = env('rootURL');
